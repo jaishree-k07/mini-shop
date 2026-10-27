@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lampwick Stationers - Mini Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="bar">
+    <h1>Lampwick Stationers</h1>
+    <a class="cart-link" href="#cart-section">Cart <span id="count" class="badge">0</span></a>
+  </header>
+
+  <main class="layout">
+    <section aria-labelledby="catalogue-title">
+      <div class="head-row">
+        <h2 id="catalogue-title">Catalogue</h2>
+        <div id="filters" class="filters" role="group" aria-label="Filter by category"></div>
+      </div>
+      <div id="catalogue" class="grid"></div>
+    </section>
+
+    <aside id="cart-section" class="cart" aria-labelledby="cart-title">
+      <h2 id="cart-title">Your cart</h2>
+      <p id="empty" class="empty">Your cart is empty. Add something from the catalogue to start.</p>
+      <div id="cart-body" hidden>
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">Items in your cart</caption>
+            <thead>
+              <tr><th scope="col">Item</th><th scope="col">Quantity</th><th scope="col" class="num">Line total</th></tr>
+            </thead>
+            <tbody id="cart-rows"></tbody>
+          </table>
+        </div>
+        <dl class="sums">
+          <div><dt>Subtotal</dt><dd id="subtotal"></dd></div>
+          <div id="discount-row"><dt>Discount</dt><dd id="discount"></dd></div>
+          <div><dt>Delivery</dt><dd id="delivery"></dd></div>
+          <div class="grand"><dt>Total</dt><dd id="total"></dd></div>
+        </dl>
+        <p id="nudge" class="nudge"></p>
+        <div class="actions">
+          <button id="checkout" type="button" class="primary">Preview checkout</button>
+          <button id="clear" type="button" class="ghost">Clear cart</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <h2 id="dialog-title">Checkout preview</h2>
+    <p class="demo">Demonstration only. No payment is taken and no order is placed.</p>
+    <ul id="summary" class="summary"></ul>
+    <dl class="sums" id="dialog-sums"></dl>
+    <div class="actions">
+      <button id="close" type="button" class="primary">Back to shop</button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
